@@ -5,40 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <title>Diccionario</title>
 </head>
 <body>
-    <h1>Diccionario</h1>
-    <audio id="play-audio" src=""></audio>
-    <label for="word-input">Ingrese palabra en ingles:</label>
-    <input type="text" id="word-input">
-    <button type="button" id="word-button">Obtener</button>
-    <br><br>
-    <table id="content">
-        <thead>
-            <tr>
-                <th>Word</th>
-                <th>Phonetic</th>
-                <th>Origin</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <br><br><br><br>
-    <table id="meanings">
-        <thead>
-            <tr>
-                <th>Word</th>
-                <th>Definitions</th>
-                <th>Part of Speech</th>
-                <th>Examples</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="container">
+        <h1>Diccionario</h1>
+        <div class="container">
+            <label for="word-input">Ingrese palabra en ingles:</label>
+            <input class="form-control" type="text" id="word-input">
+            <button class="btn btn-primary" type="button" id="word-button">Obtener</button>
+        </div>
+        <br><br>
+        <table class="table table-sortable" id="content">
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Phonetic</th>
+                    <th>Origin</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br><br><br><br>
+        <table class="table table-sortable" id="meanings">
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Definitions</th>
+                    <th>Part of Speech</th>
+                    <th>Examples</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
     
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/main.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 </html>
