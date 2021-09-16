@@ -15,24 +15,31 @@ $(document).ready(function() {
         let origin = data[0].origin;
         let meanings = data[0].meanings;
 
+        let soundBtn = document.createElement('button')
+        soundBtn.innerHTML = "Play Audio";
+        soundBtn.value = "Play";
+        soundBtn.onclick = function() {
+          reproducirAudio(audio);
+        }
+
         $('#content').find('tbody').append('<tr>'
         +'<td>'+word+'</td>'
         +'<td>'+phonetic+'</td>'
-        +'<td>'+audio+'</td>'
-        +'<td>'+origin+'</td>'+
-        '</tr>');
+        +'<td>'+origin+'</td>'
+        +'</tr>');
+        $('#content').find('tbody').append(soundBtn)
 
         for (obj in meanings) {
-          let partOfSpeech = meanings[speechInd].partOfSpeech
-          let definition = meanings[defInd].definitions[0].definition
-          let example = meanings[exInd].definitions[0].example
+          let partOfSpeech = meanings[speechInd].partOfSpeech;
+          let definition = meanings[defInd].definitions[0].definition;
+          let example = meanings[exInd].definitions[0].example;
 
           $('#meanings').find('tbody').append('<tr>'
           +'<td>'+word+'</td>'
           +'<td>'+speechNum+'. '+partOfSpeech+'</td>'
           +'<td>'+defNum+'. '+definition+'</td>'
           +'<td>'+exNum+'. '+example+'</td>'+
-          '</tr>')
+          '</tr>');
 
           speechInd++;
           speechNum++;
@@ -45,3 +52,8 @@ $(document).ready(function() {
     });
   });
 });
+
+function reproducirAudio(url) {
+  let sound = new Audio(url);
+  sound.play();
+}
